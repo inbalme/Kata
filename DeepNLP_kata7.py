@@ -18,9 +18,10 @@ def compute_mse_linear_model():
     # y = x.matmul(w) + b
     y = x @ w + b
     mse = mean_squared_loss(torch.Tensor([2, 0, 3]), y)
-    print('mse gradient', mse.backward())
-    print('grad w', w.grad.data)
-    print('grad b', b.grad.data)
+    mse.backward()
+    # print('mse gradient', mse.backward())
+    # print('grad w', w.grad.data)
+    # print('grad b', b.grad.data)
     return mse, w.grad.data, b.grad.data
 
 def main():
